@@ -1,0 +1,11 @@
+.AddTodoForm {
+  text-align: center;
+  font-size: 18px;
+}
+
+.AddTodoForm input,
+.AddTodoForm button {
+  font-size: inherit;
+  margin: 8px;
+  padding: 3px 8px;
+}
