@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './FilterTodos.css';
+import { TextField } from '@material-ui/core';
 
 interface IFilterTodosProps {
   filterText: string,
@@ -10,12 +10,7 @@ interface IFilterTodosProps {
 class FilterTodos extends React.PureComponent<IFilterTodosProps, {}> {
   public render() {
     return (
-      <div className="filter">
-        <label>
-          Filter:
-          <input type="text" value={this.props.filterText} onChange={this.handleOnFilterTextChange} />
-        </label>
-      </div>
+      <TextField label="Filter" value={this.props.filterText} onChange={this.handleOnFilterTextChange} />
     );
   }
 

@@ -17,11 +17,6 @@
   background: #e9eff7;
 }
 
-.todotable input[type=checkbox] {
-  width: 18px;
-  height: 18px;
-}
-
 .todotable-label {
   width: 100%;
 }

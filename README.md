@@ -6,3 +6,8 @@
  - remove todos
  - filter todos
  - automatically persisting state to local storage
+
+**Material ui**
+```
+npm install @material-ui/core
+```

@@ -2,13 +2,13 @@ import * as React from 'react';
 import SimpleStorage from "./SimpleStorage";
 
 import {ITodoItem} from '../interfaces';
+import AddTodoForm from './AddTodoForm';
 import TodoItem from './TodoItem';
 import TodoList from './TodoList';
 
 import './App.css';
 
 import logo from '../resources/logo.svg';
-import AddTodoForm from './AddTodoForm';
 
 interface IAppState {
   filterText: string,
@@ -29,24 +29,6 @@ class App extends React.Component<{}, IAppState> {
       ]
     };
   }
-
-  /*public componentDidMount() {
-    this.hydrateStateWithLocalStorage();
-
-    window.addEventListener(
-      "beforeunload",
-      this.saveStateToLocalStorage.bind(this)
-    );
-  }
-
-  public componentWillUnmount() {
-    window.removeEventListener(
-      "beforeunload",
-      this.saveStateToLocalStorage.bind(this)
-    );
-
-    this.saveStateToLocalStorage();
-  }*/
 
   public render() {
     return (
@@ -107,26 +89,6 @@ class App extends React.Component<{}, IAppState> {
       }
     })
   }
-
-  /*private hydrateStateWithLocalStorage() {
-    for (const key in this.state) {
-      if (localStorage.hasOwnProperty(key)) {
-        let value = localStorage.getItem(key);
-
-        if (value) {
-          value = JSON.parse(value);
-        }
-
-        this.setState({ ...this.state, [key]: value });
-      }
-    }
-  }
-
-  private saveStateToLocalStorage() {
-    for (const key of Object.keys(this.state)) {
-      localStorage.setItem(key, JSON.stringify(this.state[key]));
-    }
-  }*/
 }
 
 export default App;

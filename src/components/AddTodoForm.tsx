@@ -1,3 +1,5 @@
+import { TextField } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import * as React from 'react';
 
 import './AddTodoForm.css';
@@ -22,20 +24,22 @@ class AddTodoForm extends React.PureComponent<IAddTodoFormProps, IAddTodoFormSta
   public render() {
     return (
       <form className="AddTodoForm" onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.newTodoText} onChange={this.onHandleNewTodoTextChange} />
-        <button>
+        <TextField label="New todo" value={this.state.newTodoText} onChange={this.onHandleNewTodoTextChange} />
+        <Button variant="outlined" color="primary" onClick={this.handleSubmit}>
           Add
-        </button>
+        </Button>
       </form>
     );
   }
 
-  public handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  private handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    this.props.onAddTodo(this.state.newTodoText);
+    if (this.state.newTodoText) {
+      this.props.onAddTodo(this.state.newTodoText);
 
-    this.setState({newTodoText: ""});
+      this.setState({newTodoText: ""});
+    }
   }
 
   private onHandleNewTodoTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
